@@ -13,7 +13,7 @@ enum Status {
 }
 
 class ArticleListViewModel extends ChangeNotifier {
-  ArticleViewModel viewModel = ArticleViewModel('general', []);
+  ArticleViewModel articleViewModel = ArticleViewModel('general', []);
   Status status = Status.empty; // istek hangi aşamada
 
   // ekran ilk açıldığında bütün haberler çekilsin
@@ -25,7 +25,7 @@ class ArticleListViewModel extends ChangeNotifier {
     status = Status.loading;
     notifyListeners(); // statusun değiştiğini haber verir
 
-    viewModel.articles = await NewsService().getNewsByCategory(category);
+    articleViewModel.articles = await NewsService().getNewsByCategory(category);
     status = Status.received;
     notifyListeners();
   }

@@ -7,7 +7,7 @@ import 'package:news/models/news.dart';
 class NewsService {
   Future<List<Article>> getNewsByCategory(String category) async {
     String url =
-        "https://newsapi.org/v2/top-headlines?country=tr&category=$category&apiKey=e1911124233c4c339c9c810ad32da12c";
+        "https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=e1911124233c4c339c9c810ad32da12c";
 
     final response = await http.get(Uri.parse(url));
 

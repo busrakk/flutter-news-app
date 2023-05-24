@@ -12,6 +12,7 @@ class News {
     status = json["status"];
     totalResults = json["totalResults"];
     if (json['articles'] != null) {
+      articles = <Article>[]; // arrticle nesnesinden türetilmiş boş liste
       // articles, Article nesnelerini tutan boş bir listedir.
       json["articles"].forEach((articleJSON) {
         articles!.add(Article.fromJSON(articleJSON));
